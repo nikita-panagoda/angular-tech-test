@@ -1,0 +1,49 @@
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8px 0;
+  padding: 20px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  border-radius: 8px;
+  background: #ffffff;
+
+  &-done {
+    .todo-item-label,
+    .todo-item-description,
+    .todo-item-category {
+      color: #868686;
+    }
+
+    &-date {
+      margin-left: 10px;
+      color: #868686;
+    }
+  }
+
+  &-actions {
+    display: flex;
+    align-items: center;
+
+    &-checkbox {
+      margin-right: 5px;
+    }
+  }
+
+  &-label {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  &-description {
+    margin-bottom: 8px;
+  }
+
+  &-category {
+    background: #f2f2f2;
+    border-radius: 8px;
+    padding: 3px 6px;
+    font-style: italic;
+  }
+}

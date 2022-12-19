@@ -1,0 +1,35 @@
+<h2 mat-dialog-title>{{isEdit ? 'Edit' : 'Add new'}} todo</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="form" (submit)="onSubmit()" class="todo-form">
+    <app-input type="text"
+               label="Label"
+               placeholder="Label"
+               class="todo-form-input"
+               [control]="label"
+               [errorMessage]="label.hasError('required') ? 'Label is required' : ''">
+    </app-input>
+    <app-input type="text"
+               label="Description"
+               placeholder="Description"
+               class="todo-form-input"
+               [control]="description"
+               [errorMessage]="description.hasError('required') ? 'Description is required' : ''">
+    </app-input>
+    <app-input type="text"
+               label="Category"
+               placeholder="Category"
+               class="todo-form-input"
+               [control]="category"
+               [errorMessage]="category.hasError('required') ? 'Category is required' : ''">
+    </app-input>
+
+    <div class="todo-form-actions">
+      <app-button class="todo-form-actions-cancel"
+                  type="button"
+                  [mat-dialog-close]="true">
+        Cancel
+      </app-button>
+      <app-button color="primary" type="submit" [disabled]="form.invalid">Submit</app-button>
+    </div>
+  </form>
+</mat-dialog-content>

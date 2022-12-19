@@ -1,0 +1,26 @@
+<div class="todo-item" [ngClass]="{'todo-item-done': checked}">
+  <div class="todo-item-data">
+    <h3 class="todo-item-label">{{todo.label}}</h3>
+    <p class="todo-item-description">{{todo.description}}</p>
+    <div>
+      <span class="todo-item-category">{{todo.category}}</span>
+      <span *ngIf="checked" class="todo-item-done-date">{{todo.done}}</span>
+    </div>
+  </div>
+
+  <div class="todo-item-actions">
+    <mat-checkbox class="todo-item-actions-checkbox" [(ngModel)]="checked" (change)="onChange()"></mat-checkbox>
+
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="openFormDialog()">
+        Edit
+      </button>
+      <button mat-menu-item (click)="removeTodo(todo.id)">
+        Delete
+      </button>
+    </mat-menu>
+  </div>
+</div>

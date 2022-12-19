@@ -1,0 +1,17 @@
+<div class="todo">
+  <div class="todo-header">
+    <mat-form-field appearance="standard" class="todo-header-input">
+      <mat-label>Filter</mat-label>
+      <input matInput [(ngModel)]="filter" placeholder="Filter">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+
+    <app-button class="todo-header-button"
+                type="button"
+                color="primary"
+                (click)="openFormDialog()">
+      Add new todo
+    </app-button>
+  </div>
+  <app-todo-list [filter]="filter"></app-todo-list>
+</div>

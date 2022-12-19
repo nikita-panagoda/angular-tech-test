@@ -1,0 +1,7 @@
+<ng-container>
+  <div class="todo-list" *ngIf="todos$ | async as todos">
+    <app-todo-item *ngFor="let todo of todos | filterTodos:filter" [todo]="todo"></app-todo-item>
+  </div>
+</ng-container>
+
+
